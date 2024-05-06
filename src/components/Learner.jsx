@@ -13,18 +13,24 @@ import Score from './Score';
 //We're creating a div for a single learner
 //We're being passed the info for each individual learner as props from the map function we made in App.js:
 
-function Learner({ learner }) {
+function Learner({ learner, updateState, updateMultiple, addLearner, swapObj }) {
     return (
       <div className='learner-container'>
         <h2>{learner.name}</h2>
         <p>{learner.bio}</p>
         <ul>
-          {/* Mapping over the score array for the learner, passing the destructured
+          {/* Scores are nested in another array. More destructuring is needed. Mapping over the score array for the learner, passing the destructured
           scores as props to the Score component*/}
           {learner.scores.map((score, index) => (
             <Score key={index} score={score} />
           ))}
         </ul>
+        <div className='btnContainer'>
+          <button onClick={updateState}>Update State</button>
+          <button onClick={updateMultiple}>Update Multiple</button>
+          <button onClick={addLearner}>Add Learner</button>
+          <button onClick={swapObj}>Swap Obj</button>
+        </div>
       </div>
     );
 }

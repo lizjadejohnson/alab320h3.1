@@ -44,3 +44,15 @@
 .learner-container {
   border: solid blue;
 }
+
+.score-high {
+  color: green;
+}
+
+.score-low {
+  color: red;
+}
+
+.date-yellow {
+  color: yellow;
+}
